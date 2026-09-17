@@ -347,5 +347,20 @@
   </div>
 </footer>
 
+<script>
+// Contador anônimo de visitas — marca 1 por carregamento da página.
+(function () {
+  try {
+    var BASE = 'https://supabase-api-prod.verdent.ai/p/pad009c864d33ab4ccea6/rest/v1/site_visits';
+    var KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoyMTA0NjcwNDkwLCJpYXQiOjE3ODkwNTEyOTAsImlzcyI6InN1cGFiYXNlIiwicHJvamVjdF9yZWYiOiJwYWQwMDljODY0ZDMzYWI0Y2NlYTYiLCJyb2xlIjoiYW5vbiJ9.KhDyXSgKpO2gvGRdsNxsYS9yR_H-QMnJt72Ibqgj144';
+    fetch(BASE, {
+      method: 'POST',
+      headers: { 'apikey': KEY, 'Authorization': 'Bearer ' + KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ local: 'landing' }),
+    });
+  } catch (e) { /* silencioso */ }
+})();
+</script>
+
 </body>
 </html>
